@@ -14,7 +14,7 @@ namespace Practice
         }
         void ICustomer2.Print()
         {
-            Console.WriteLine("Icustomer2")
+            Console.WriteLine("Icustomer2");
         }
         private int id;
         private string name;

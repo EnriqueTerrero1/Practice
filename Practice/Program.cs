@@ -1,7 +1,7 @@
 ﻿
 using Practice;
 
-
+ 
 // See https://aka.ms/new-console-template for more information
 
 Person[] persons = new Person[] { new Person { name = "Enrique" }, new Person { name = "Jose" }, new Person { name = "Enmanuel" } };
@@ -30,6 +30,7 @@ employees[1] =new PartTimeEmployee() { name = "Enrique", lastName = "Terrero" };
 employees[2] =new FullTimeEmployee() { name = "Enrique", lastName = "Terrero" };
 employees[3]=new TemporaryEmployee() { name = "Enrique", lastName = "Terrero" };
 
+
 foreach (Employee e in employees)
 {
     try
@@ -48,5 +49,24 @@ customer2.Name = "maria";
 customer2.Id = 101;
 customer2.PrintDetails();
 ((ICustomer)customer2).Print();
+
+int intMaxValue = int.MaxValue;
+int intminValue=int.MinValue;
+Console.WriteLine(intMaxValue);
+
+DateTime hireDate = new DateTime(2022,04,19);
+
+Console.WriteLine(hireDate);
+string firstName = "Enrique";
+string lastName = "Terrero";
+string fullName = string.Concat(firstName, lastName);
+string uppercaseFistName= firstName.ToUpper();
+Console.WriteLine(fullName);
+var lenght=fullName.Length;
+Console.WriteLine(lenght);  
+Console.WriteLine(uppercaseFistName);
+
+Person enrique = new Person();
+enrique.Print("Enrique");
 
 
