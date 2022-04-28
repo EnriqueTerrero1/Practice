@@ -4,6 +4,10 @@ using Practice;
  
 // See https://aka.ms/new-console-template for more information
 
+WRfile weFile = new WRfile();
+weFile.ReadFile();
+
+
 Person[] persons = new Person[] { new Person { name = "Enrique" }, new Person { name = "Jose" }, new Person { name = "Enmanuel" } };
 
 
@@ -42,11 +46,10 @@ foreach (Employee e in employees)
     }
 }
 
-Customer customer = new Customer(101, "mark");
+Customer customer = new Customer() { Id =1,Name="Enrique",gender=1};
 customer.PrintDetails(); 
-Customer customer2 = new Customer();
-customer2.Name = "maria";
-customer2.Id = 101;
+Customer customer2 = new Customer() { Id =1,Name="Maria",gender=2};
+
 customer2.PrintDetails();
 ((ICustomer)customer2).Print();
 

@@ -8,6 +8,8 @@ namespace Practice
 {
     public struct Customer:ICustomer,ICustomer2
     {
+
+        public int gender { get; set; }
         void  ICustomer.Print()
         {
             Console.Write("Icustomer1");
@@ -29,14 +31,31 @@ namespace Practice
             get { return id;}
             set { id = value; }
         }
-        public Customer(int Id,string Name)
+
+        public static string GetGender(int gender)
+        {
+            switch(gender)
+            { 
+                case 0:
+                    return " UnKnow";
+                case 1:
+                    return "Male";
+                case 2:
+                    return "Female";
+                default:
+                    return " Invalid data detected";
+
+            }    
+        }
+        public Customer(int Id,string Name,int gender)
         {
             this.id = Id;
             this.name = Name;
+            this.gender = gender;
         }
         public void PrintDetails()
         {
-            Console.WriteLine($"Your Id :{id} yor name is {name}");
+            Console.WriteLine($"Your Id :{id} your name is {name} your gender is {GetGender(gender)}");
         }
        
     }
