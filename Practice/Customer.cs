@@ -8,8 +8,20 @@ namespace Practice
 {
     public struct Customer:ICustomer,ICustomer2
     {
+        public enum gender
+        {
+            unknow,male,female
+        }
 
-        public int gender { get; set; }
+        public void getGender()
+        {
+            string [] names = Enum.GetNames(typeof(gender));
+            foreach (string name in names)
+            {
+                Console.WriteLine(name);
+            }
+        }
+        public gender Gender { get; set; }
         void  ICustomer.Print()
         {
             Console.Write("Icustomer1");
@@ -32,26 +44,26 @@ namespace Practice
             set { id = value; }
         }
 
-        public static string GetGender(int gender)
+        public static string GetGender(gender gender)
         {
             switch(gender)
             { 
-                case 0:
+                case gender.unknow:
                     return " UnKnow";
-                case 1:
+                case gender.male:
                     return "Male";
-                case 2:
+                case gender.female:
                     return "Female";
                 default:
                     return " Invalid data detected";
 
             }    
         }
-        public Customer(int Id,string Name,int gender)
+        public Customer(int Id,string Name,gender gender)
         {
             this.id = Id;
             this.name = Name;
-            this.gender = gender;
+            this.Gender = gender;
         }
         public void PrintDetails()
         {

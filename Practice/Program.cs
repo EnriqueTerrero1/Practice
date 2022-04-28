@@ -46,9 +46,9 @@ foreach (Employee e in employees)
     }
 }
 
-Customer customer = new Customer() { Id =1,Name="Enrique",gender=1};
+Customer customer = new Customer() { Id =1,Name="Enrique",Gender= Customer.gender.male};
 customer.PrintDetails(); 
-Customer customer2 = new Customer() { Id =1,Name="Maria",gender=2};
+Customer customer2 = new Customer() { Id =1,Name="Maria",Gender= Customer.gender.female};
 
 customer2.PrintDetails();
 ((ICustomer)customer2).Print();
